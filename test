@@ -30,7 +30,7 @@
 import rospy, roslaunch
 import sys, select, os
 import time
-#select = 0
+select = 0
 class Decide():
 
   
@@ -45,6 +45,10 @@ class Decide():
   def selection(self):
     select = 2
     return select
+
+  def process(self):
+    image_out = 6
+    select = image_out
 
   def mode_controll(self):
     ob = Decide()
