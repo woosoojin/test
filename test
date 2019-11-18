@@ -46,9 +46,9 @@ class Decide():
     select = 2
     return select
 
-
-  def mode_controll(self, opt):
-    if opt == 2:
+  def mode_controll(self):
+    ob = Decide()
+    if ob.selection() == 2:
         self.launch_detect_stop = roslaunch.scriptapi.ROSLaunch()
         self.launch_detect_stop = roslaunch.parent.ROSLaunchParent(self.uuid, [self.ros_package_path + "turtlebot3_teleop/launch/turtlebot3_teleop_key.launch"])
         self.launch_detect_stop.start()
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     rospy.init_node('tester')
     
     node = Decide()
-    node.mode_controll(2)
+    node.mode_controll()
     node.main()
     
     
